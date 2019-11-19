@@ -9,8 +9,6 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
     <meta charset="UTF-8">
     <title>회원가입</title>
 </head>
@@ -45,12 +43,9 @@
             </form>
         </div>
     </div>
-
-    <!-- Mainly scripts -->
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.j' %}s"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
-    <!-- iCheck -->
     <script src="{% static 'js/plugins/iCheck/icheck.min.js' %}"></script>
     <script>
         $(document).ready(function(){
@@ -58,6 +53,16 @@
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',
             });
+
+            $('#registerSubmit').click(function(){
+                let returnVal = true
+                if($('#password').val() != $('#passwordConfirm').val()){
+                    alert('비밀번호를 다시 확인해주세요')
+                    returnVal = false
+                }
+                return returnVal
+            });
+
         });
     </script>
 </body>
